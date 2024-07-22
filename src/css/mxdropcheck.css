@@ -1,0 +1,54 @@
+.mxdc-parent {
+  display: inline;
+}
+.mxdc-parent .drop-card {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  margin-top: 5px;
+  width: 53%;
+}
+.mxdc-parent .drop-card div[data-pc-section=body] {
+  padding-top: 0;
+}
+.mxdc-parent .drop-card div[data-pc-section=content] {
+  display: flex;
+  flex-direction: column;
+  row-gap: 4px;
+  padding-bottom: 8px;
+}
+.mxdc-parent .drop-card div[data-pc-section=footer] {
+  padding: 0;
+}
+.mxdc-parent .drop-card .check-grp {
+  display: flex;
+  justify-content: space-between;
+}
+.mxdc-parent .drop-card .check-grp .id {
+  text-transform: capitalize;
+  font-size: 0.95em;
+  font-weight: 500;
+  color: rgba(0, 0, 0, 0.6);
+}
+.mxdc-parent .drop-card .check-grp > input {
+  width: 1.1em;
+}
+.mxdc-parent .drop-card .btn-parent {
+  display: flex;
+  justify-content: end;
+}
+.mxdc-parent .drop-card .btn-parent .btn {
+  background-color: rgba(34, 88, 153, 0.9);
+  font-size: 0.8em;
+  font-weight: 500;
+  color: white;
+  padding: 5px 9px;
+  border-radius: 6px;
+  width: fit-content;
+}
+.mxdc-parent .drop-card .btn-parent .btn:hover {
+  background-color: rgba(34, 88, 153, 0.8);
+  box-shadow: 0 0 0 0.1rem rgb(191, 219, 254);
+}
+
+/*# sourceMappingURL=mxdropcheck.css.map */

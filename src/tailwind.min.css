@@ -1,0 +1,1 @@
+@tailwind base;@tailwind components;@tailwind utilities;.App{height:50vh;width:40vw;border-radius:5px;border:1.6px solid grey;display:flex;position:absolute;top:50%;left:50%;transform:translate(-50%,-50%)}

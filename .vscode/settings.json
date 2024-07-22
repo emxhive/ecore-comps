@@ -1,0 +1,25 @@
+{
+    "files.exclude": {
+        "**/.git": true,
+        "**/.svn": true,
+        "**/.hg": true,
+        "**/CVS": true,
+        "**/.DS_Store": true,
+        "**/Thumbs.db": true,
+        "**/package.json": true,
+        "**/*.json": true,
+        "**/*.md": true,
+        "**/.gitignore": true,
+        "**/node_modules": true,
+        "**/.vscode": true,
+        "**/public": true,
+        "src/css": true,
+        "tailwind.config.js": true,
+        "**/tailwind.min.css": true,
+        "index.css": true,
+        "tailwind.css": true,
+        "**/tailwind.css": true,
+        "**/index.css": true
+    },
+    "explorerExclude.backup": {}
+}

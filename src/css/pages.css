@@ -1,0 +1,66 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap");
+.pg-parent {
+  padding: 50px 13%;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  row-gap: 33px;
+}
+@media (max-width: 799px) {
+  .pg-parent {
+    padding: 50px 5%;
+  }
+}
+.pg-parent .mxbxz {
+  padding: 25px 30px;
+  border: 1.2px solid lightgray;
+  border-radius: 13px;
+  width: 100%;
+}
+.pg-parent .mxbxz .header {
+  font-size: 1.4em;
+  font-weight: 600;
+  margin-bottom: 13px;
+}
+.pg-parent .mxbxz .body {
+  display: grid;
+  grid-template-columns: 6fr 1fr 0.6fr;
+  gap: 15px;
+}
+.pg-parent .mxbxz .body .mxbox-sec {
+  align-content: center;
+}
+.pg-parent .mxbxz .body .mxbox-sec .name {
+  font-size: 1em;
+  font-weight: 500;
+}
+.pg-parent .mxbxz .body .mxbox-sec .info {
+  font-size: 0.85em;
+  font-weight: 300;
+}
+.pg-parent .mxbxz .body .mxbox-sec .stats {
+  text-align: right;
+}
+.pg-parent .mxbxz .body .mxbox-sec .pi-chevron-right {
+  color: grey;
+  font-size: 0.8em;
+}
+.pg-parent .mxbxz .body .mxbox-sec .dropdwn {
+  max-width: 80px;
+}
+.pg-parent .mxbxz .body .mxbox-sec .dropdwn span[data-pc-section=input] {
+  font-weight: 500;
+  align-self: center;
+}
+.pg-parent .mxbxz .body .mxbox-sec .dropdwn div[data-pc-section=trigger] {
+  width: 30%;
+  margin-right: 6px;
+}
+.pg-parent .mxbxz .body .mxbox-sec .slct-btn div[data-pc-section=button] {
+  max-width: 50%;
+  height: 40px;
+  justify-content: center;
+}
+
+/*# sourceMappingURL=pages.css.map */

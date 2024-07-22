@@ -1,0 +1,159 @@
+.mx-txtedit-parent {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    max-height: 100%;
+    overflow: hidden;
+    height: 100%;
+    position: relative;
+
+
+    .mx-attch-view {
+        position: absolute;
+        overflow: hidden;
+        z-index: 3;
+        width: 100%;
+        max-height: 70%;
+        bottom: 12%;
+        height: 70%;
+
+
+        >.mx-header {
+            margin-bottom: 25px;
+        }
+
+        >.mx-at-vw-body {
+            scrollbar-width: none;
+            display: flex;
+            flex-direction: column;
+            // padding: 20px 0;
+            row-gap: 1px;
+            overflow: scroll;
+            max-height: 80%;
+
+            >.atmt {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                background-color: rgb(34, 88, 153, 0.1);
+                padding: 4px 15px 4px 7px;
+
+                >span {
+
+                    font-size: 0.9em;
+                    font-weight: 500;
+
+                }
+
+                .pi {
+                    color: black;
+
+                    &:hover {
+                        color: red;
+                        border: 0.01em solid rgb(0, 0, 255, 0.3);
+                    }
+                }
+
+            }
+        }
+    }
+
+    .mx-tce {
+        position: relative;
+        font-size: 0.99em;
+        flex: 1;
+        overflow-x: hidden;
+        padding: 10px 5px;
+        scrollbar-width: thin;
+
+        &:focus {
+            outline: none;
+        }
+
+        .mx-img-box {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            column-gap: 50px;
+
+            .pi {
+                color: red;
+                padding: 7px;
+                border-radius: 6px;
+
+                &:hover {
+                    background-color: rgb(211, 211, 211, 0.3)
+                }
+
+
+            }
+
+        }
+    }
+
+    .mx-tce-btm-toolbar {
+        max-height: 50px;
+        display: flex;
+        align-items: center;
+        padding: 4px 25px 7px 7px;
+        justify-content: space-between;
+        column-gap: 10px;
+
+        .mx-file-count {
+            color: grey;
+            border-radius: 5px;
+            padding: 3px 6px;
+
+            .MuiBadge-badge {
+                height: 16px;
+                min-width: 13px;
+                padding: 0 5px;
+            }
+
+            &:hover {
+                background-color: rgb(211, 211, 211, 0.3)
+            }
+        }
+
+
+
+        .mx-toolgrp {
+            flex: 1;
+            display: flex;
+            column-gap: 2px;
+
+            .mx-svg-active {
+                background-color: rgb(211, 211, 211, 0.8)
+            }
+
+            >div {
+                >svg {
+                    font-size: 1.3em;
+                }
+
+                color: grey;
+                border-radius: 5px;
+                padding: 6px;
+
+                &:hover {
+                    background-color: rgb(211, 211, 211, 0.3)
+                }
+            }
+        }
+
+        .mx-send-btn {
+            background-color: rgb(34, 88, 153);
+            color: white;
+            font-weight: 500;
+            font-size: 0.9em;
+            padding: 5px 20px;
+            border-radius: 20px;
+
+            &:hover {
+                background-color: rgb(34, 88, 153, 0.8);
+                box-shadow: 0 0 0 0.1rem rgba(191, 219, 254, 1);
+            }
+
+        }
+    }
+}
