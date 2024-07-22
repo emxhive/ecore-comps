@@ -162,7 +162,7 @@ export function ticketStatusSummary(status: string, id: string) {
     case "resolved":
       return (
         <p className="small-talk">
-          Ticket {"#" + id} has been resolved <br /> Thanks for your patience 🤗
+          Ticket {"#" + id} has been resolved <br /> Best Regards!!
         </p>
       );
   }

@@ -41,3 +41,19 @@ type UtrackType = {
   zCtrl: boolean;
   killUpload: boolean;
 };
+
+type SMsgType = {
+  isAgent: boolean;
+  date: Date;
+  message: any;
+  attachments: File[];
+};
+
+type NMType = {
+  html: any;
+  atmt: any[];
+};
+
+type TktData = TkVData & {
+  history: SMsgType[];
+};

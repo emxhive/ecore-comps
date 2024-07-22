@@ -21,6 +21,7 @@ import { DataView } from "primereact/dataview";
 import { BsReplyAll } from "react-icons/bs";
 import { getTicket } from "./MxDFxns.tsx";
 import TextEditor from "./TextEditor.tsx";
+import { RState } from "./delacaration";
 
 let first = true;
 export default function TicketView() {
@@ -29,13 +30,16 @@ export default function TicketView() {
   const navigate = useNavigate();
 
   //USESTATES
-  const [tkd, settkd] = useState(getTicket(id as string));
+  const [tkd, settkd]: RState<TktData> = useState(getTicket(id as string));
 
   /**local ticket details */
   let ltkd = tvdInit(tkd);
   let tkl = stdInit();
 
-  const [nwMsg, setNMsg] = useState();
+  const [nwMsg, setNMsg]: [
+    NMType | undefined,
+    React.Dispatch<React.SetStateAction<NMType | undefined>>
+  ] = useState();
   const [showEditor, setShowEditor] = useState(false);
   const [mobVTktD, setmobVTktD] = useState(false);
   const phoneSCreen = useMediaQuery("(max-width:799.99999px)");
@@ -291,13 +295,24 @@ export default function TicketView() {
   }, [id]);
 
   useEffect(() => {
-    if (nwMsg) {
-      console.log(nwMsg);
+    if (nwMsg && tkd) {
+      const msg: SMsgType = {
+        isAgent: false,
+        date: new Date(),
+        message: nwMsg.html,
+        attachments: nwMsg.atmt,
+      };
+      let { history } = { ...tkd };
+      history?.push(msg);
+      settkd({
+        ...tkd,
+        ["history"]: history,
+      });
     }
   }, [nwMsg]);
 
   useEffect(() => {
-    if (!first) {
+    if (!first && nwMsg) {
       console.log(nwMsg);
     }
 

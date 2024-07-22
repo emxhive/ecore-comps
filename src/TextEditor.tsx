@@ -26,6 +26,7 @@ function TextEditor({ draftRef, zNMsg, setShowEditor }) {
     zCtrl: false,
     killUpload: false,
   });
+
   //
 
   //USESTATE
@@ -293,7 +294,7 @@ function TextEditor({ draftRef, zNMsg, setShowEditor }) {
 
         <div
           onClick={() => {
-            zNMsg(dceRef.current.innerHTML);
+            zNMsg({ html: dceRef.current.innerHTML, atmt: files });
             setShowEditor(false);
           }}
           id="mx-txtedit-sendbtn"
@@ -325,6 +326,7 @@ const nwrt = () => {
   del.className = "pi pi-trash";
   del.onclick = (e) => {
     (e.target as HTMLElement)?.parentElement?.remove();
+    console.log();
   };
 
   const mutObserver = new MutationObserver(() => {
