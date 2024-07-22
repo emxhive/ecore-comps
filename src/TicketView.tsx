@@ -32,6 +32,8 @@ export default function TicketView() {
   //USESTATES
   const [tkd, settkd]: RState<TktData> = useState(getTicket(id as string));
 
+  console.log(tkd);
+
   /**local ticket details */
   let ltkd = tvdInit(tkd);
   let tkl = stdInit();
@@ -46,6 +48,7 @@ export default function TicketView() {
 
   //USE REF
   const draftRef = useRef("");
+  const nwMsgRef = useRef(false);
 
   //ARRAY THINGS
   const tktInfoArr: any[] = [];
@@ -93,6 +96,7 @@ export default function TicketView() {
         ></i>
       </div>
       <TextEditor
+        nwMsgRef={nwMsgRef}
         setShowEditor={setShowEditor}
         draftRef={draftRef}
         zNMsg={setNMsg}
@@ -247,7 +251,7 @@ export default function TicketView() {
         className="chat-history-box"
       >
         <div className="tkt-hb-header">
-          <span className="tkt-subject">{">#" + id + "_" + tkd.subject}</span>
+          <span className="tkt-subject">{">#" + id + "_" + tkd?.subject}</span>
           <span
             className="mx-tkt-hd-info"
             onClick={() => {
@@ -258,7 +262,8 @@ export default function TicketView() {
           </span>
         </div>
         <div className="chat-history">
-          {tkd.history.map((obj) => {
+          {console.log(tkd) +""}
+          {tkd?.history.map((obj) => {
             const dateStr = new Date(obj.date).toLocaleTimeString(undefined, {
               hour12: true,
               hour: "2-digit",
@@ -295,7 +300,9 @@ export default function TicketView() {
   }, [id]);
 
   useEffect(() => {
-    if (nwMsg && tkd) {
+    if (nwMsg && tkd && nwMsgRef.current) {
+      console.log("I ran ");
+      nwMsgRef.current = false;
       const msg: SMsgType = {
         isAgent: false,
         date: new Date(),
@@ -313,7 +320,6 @@ export default function TicketView() {
 
   useEffect(() => {
     if (!first && nwMsg) {
-      console.log(nwMsg);
     }
 
     first = false;

@@ -11,7 +11,7 @@ import { Image } from "primereact/image";
 import { Badge, Paper } from "@mui/material";
 
 let already = false;
-function TextEditor({ draftRef, zNMsg, setShowEditor }) {
+function TextEditor({ draftRef, zNMsg, setShowEditor, nwMsgRef }) {
   //REF
   const urList: React.MutableRefObject<any> = useRef([]);
   const fileInputRef: React.MutableRefObject<any> = useRef();
@@ -294,6 +294,7 @@ function TextEditor({ draftRef, zNMsg, setShowEditor }) {
 
         <div
           onClick={() => {
+            nwMsgRef.current = true;
             zNMsg({ html: dceRef.current.innerHTML, atmt: files });
             setShowEditor(false);
           }}
@@ -326,7 +327,6 @@ const nwrt = () => {
   del.className = "pi pi-trash";
   del.onclick = (e) => {
     (e.target as HTMLElement)?.parentElement?.remove();
-    console.log();
   };
 
   const mutObserver = new MutationObserver(() => {
