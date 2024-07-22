@@ -12,14 +12,18 @@ function Notify() {
 
   const [selected, setSelected] = useState("Wallet");
 
-  //MINI COMP
+  // THIS IS THE MAIN COMPONENT -- THE ACTUAL CARD NOTIFICATION SOMETHING
   const noticebox = ({ title, info, date }) => {
     return (
       <div className="mx-notice-box">
         <div className="title-box">
           <span className="title">{title}</span>
           <span className="date">
-            <i>{new Date(date).toLocaleDateString(undefined, {dateStyle: 'medium'})}</i>
+            <i>
+              {new Date(date).toLocaleDateString(undefined, {
+                dateStyle: "medium",
+              })}
+            </i>
             <i>at</i>
             <i>{new Date(date).toLocaleTimeString()}</i>
           </span>
