@@ -14,6 +14,7 @@ import SupportTable from "./SupportTable.tsx";
 import { upc0 } from "./MxFxns.tsx";
 import { xTw } from "./xTw.js";
 import { getTicketCountToday, initTickets } from "./MxDFxns.tsx";
+import Notify from "./Notify.tsx";
 
 /**
  * @type {import("primereact/api").PrimeReactPTOptions}
@@ -26,17 +27,17 @@ function App() {
   }
   const tktRef = useRef();
 
-  const compList = ["settings", "security", "support"];
+  const compList = ["settings", "security", "support", "notify"];
   return (
     <PrimeReactProvider value={{ unstyled: true, pt: xTw }}>
       <div className="parent">
-        <div className="btn-box">
+        {/* <div className="btn-box">
           {compList.map((nom, i) => (
             <Link key={nom} to={"/" + nom}>
               <Button key={nom} className="hm-btns" label={upc0(nom)} text />
             </Link>
           ))}
-        </div>
+        </div> */}
 
         <Routes>
           <Route path="settings" element={<Settings />} />
@@ -45,6 +46,7 @@ function App() {
             <Route index element={<SupportTable />} />
             <Route path=":id" element={<TicketView />} />
           </Route>
+          <Route path="notify" element={<Notify />} />
         </Routes>
       </div>
     </PrimeReactProvider>

@@ -32,8 +32,6 @@ export default function TicketView() {
   //USESTATES
   const [tkd, settkd]: RState<TktData> = useState(getTicket(id as string));
 
-  console.log(tkd);
-
   /**local ticket details */
   let ltkd = tvdInit(tkd);
   let tkl = stdInit();
@@ -262,7 +260,6 @@ export default function TicketView() {
           </span>
         </div>
         <div className="chat-history">
-          {console.log(tkd) +""}
           {tkd?.history.map((obj) => {
             const dateStr = new Date(obj.date).toLocaleTimeString(undefined, {
               hour12: true,
@@ -299,9 +296,9 @@ export default function TicketView() {
     settkd(getTicket(id as string));
   }, [id]);
 
+  /////////////////////////////////////////////////////////////INEFFICEIENT
   useEffect(() => {
     if (nwMsg && tkd && nwMsgRef.current) {
-      console.log("I ran ");
       nwMsgRef.current = false;
       const msg: SMsgType = {
         isAgent: false,
